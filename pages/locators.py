@@ -6,10 +6,10 @@ class MainPageLocators:
 
 
 class LoginPageLocators:
-    LOGIN_URL = ("http://selenium1py.pythonanywhere.com/ru/accounts/login/")
+    LOGIN_URL = ("http://selenium1py.pythonanywhere.com/en-gb/accounts/login/")
     LOGIN_EMAIL = (By.CSS_SELECTOR, "#id_login-username")
     LOGIN_PASSWORD = (By.CSS_SELECTOR, "#id_login-password")
-    LOGIN_FORGOT_PASSWORD_LINK = (By.CSS_SELECTOR, "a[href='/ru/password-reset/']")
+    LOGIN_FORGOT_PASSWORD_LINK = (By.CSS_SELECTOR, "a[href='/en-gb/password-reset/']")
     LOGIN_SUBMIT_BTN = (By.CSS_SELECTOR, "button[value='Log In']")
     REGISTRATION_EMAIL = (By.CSS_SELECTOR, "#id_registration-email")
     REGISTRATION_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password1")
