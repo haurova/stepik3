@@ -9,7 +9,8 @@ class LoginPage(BasePage):
         self.should_be_register_form()
 
     def should_be_login_url(self):
-        assert self.browser.current_url(*LoginPageLocators.LOGIN_URL), "Login page url is wrong"
+        curl = self.browser.current_url
+        assert self.browser.current_url == LoginPageLocators.LOGIN_URL, "Login page url is wrong, it's " + curl + ", should be " + LoginPageLocators.LOGIN_URL
 
     def should_be_login_form(self):
         assert self.is_element_present(*LoginPageLocators.LOGIN_EMAIL), "Login form: email field is missing"
