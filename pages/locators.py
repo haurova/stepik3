@@ -24,3 +24,8 @@ class ProductPageLocators:
     EXPECTED_SUCCESS_TEXT = " has been added to your basket."
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main p")
     CART_PRICE = (By.CSS_SELECTOR, "#messages > *:last-child > div > p > strong")
+
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
