@@ -22,4 +22,8 @@ class ProductPage(BasePage):
         cart_price = self.browser.find_element(*ProductPageLocators.CART_PRICE).text
         assert cart_price == product_price, "Price is wrong. Should be '" + product_price + "', but it's '" + cart_price + "'"
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_TEXT), "Success message should not be there"
 
+    def should_disappear(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_TEXT), "Text is not disappearing"
