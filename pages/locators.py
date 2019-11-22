@@ -20,6 +20,7 @@ class LoginPageLocators:
 class ProductPageLocators:
     ADD_TO_CART_BTN = (By.CSS_SELECTOR, "button.btn-add-to-basket")
     SUCCESS_TEXT = (By.CSS_SELECTOR, "#messages > *:first-child div")
-    EXPECTED_SUCCESS_TEXT = "The shellcoder's handbook has been added to your basket."
+    PRODUCT_NAME = (By.CSS_SELECTOR, ".product_main h1")
+    EXPECTED_SUCCESS_TEXT = " has been added to your basket."
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main p")
     CART_PRICE = (By.CSS_SELECTOR, "#messages > *:last-child > div > p > strong")

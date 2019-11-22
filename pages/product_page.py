@@ -13,7 +13,8 @@ class ProductPage(BasePage):
 
     def check_that_product_is_added(self):
         actual_text = self.browser.find_element(*ProductPageLocators.SUCCESS_TEXT).text
-        expected_text = ProductPageLocators.EXPECTED_SUCCESS_TEXT
+        product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
+        expected_text = product_name + ProductPageLocators.EXPECTED_SUCCESS_TEXT
         assert actual_text == expected_text, "Text is wrong. Should be '" + expected_text + "', but it's '" + actual_text + "'"
 
     def check_that_price_is_correct(self):
