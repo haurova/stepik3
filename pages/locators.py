@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    CART_BUTTON = (By.CSS_SELECTOR, ".btn-default[href='/en-gb/basket/']")
 
 
 class LoginPageLocators:
@@ -23,9 +24,13 @@ class ProductPageLocators:
     PRODUCT_NAME = (By.CSS_SELECTOR, ".product_main h1")
     EXPECTED_SUCCESS_TEXT = " has been added to your basket."
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main p")
-    CART_PRICE = (By.CSS_SELECTOR, "#messages > *:last-child > div > p > strong")
 
 
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
+
+class BasketPageLocators:
+    CART_PRICE = (By.CSS_SELECTOR, "#messages > *:last-child > div > p > strong")
+    EMPTY_CART_MESSAGE = (By.XPATH, "//p[contains(text(),'Your basket is empty.')]")

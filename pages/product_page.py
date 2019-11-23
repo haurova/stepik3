@@ -1,5 +1,5 @@
 from .base_page import BasePage
-from .locators import ProductPageLocators
+from .locators import ProductPageLocators, BasketPageLocators
 
 
 class ProductPage(BasePage):
@@ -19,7 +19,7 @@ class ProductPage(BasePage):
 
     def check_that_price_is_correct(self):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
-        cart_price = self.browser.find_element(*ProductPageLocators.CART_PRICE).text
+        cart_price = self.browser.find_element(*BasketPageLocators.CART_PRICE).text
         assert cart_price == product_price, "Price is wrong. Should be '" + product_price + "', but it's '" + cart_price + "'"
 
     def should_not_be_success_message(self):
