@@ -1,9 +1,10 @@
 import math
+import time
+
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 from pages.locators import BasePageLocators, MainPageLocators
 
 
@@ -63,3 +64,11 @@ class BasePage:
     def go_to_cart(self):
         cart_button = self.browser.find_element(*MainPageLocators.CART_BUTTON)
         cart_button.click()
+
+    def generate_email(self):
+        email = str(time.time()) + "@fakemail.org"
+        return str(email)
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"

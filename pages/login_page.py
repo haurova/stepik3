@@ -23,3 +23,14 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.REGISTRATION_PASSWORD), "Registration form: password field is missing"
         assert self.is_element_present(*LoginPageLocators.REGISTRATION_PASSWORD_REPEAT), "Registration form: 'repeat password' field is missing"
         assert self.is_element_present(*LoginPageLocators.REGISTRATION_SUBMIT_BUTTON), "Registration form: 'Submit' button is missing"
+
+    def register_new_user(self, email, password):
+        email_field = self.browser.find_element(*LoginPageLocators.REGISTRATION_EMAIL)
+        password_field = self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD)
+        password_repeat = self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD_REPEAT)
+        register_button = self.browser.find_element(*LoginPageLocators.REGISTRATION_SUBMIT_BUTTON)
+
+        email_field.send_keys(email)
+        password_field.send_keys(password)
+        password_repeat.send_keys(password)
+        register_button.click()
